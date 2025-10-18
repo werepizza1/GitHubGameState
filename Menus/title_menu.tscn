@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1qe7y0jwxmbu"]
+
+[ext_resource type="FontFile" uid="uid://dut62xloqq8p8" path="res://Art/Fonts/QuinqueFive.ttf" id="1_44oou"]
+[ext_resource type="Script" uid="uid://blvjol6dor6la" path="res://Menus/play_button.gd" id="2_qwv8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwv8b"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.5, 0, 0.00833321, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44oou"]
+bg_color = Color(0.5, 0, 0.00833321, 1)
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="TitleMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 624.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.5, 0, 0.00833321, 1)
+theme_override_fonts/font = ExtResource("1_44oou")
+theme_override_font_sizes/font_size = 20
+text = "Title Screen: Placeholder"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 288.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwv8b")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("1_44oou")
+theme_override_font_sizes/font_size = 10
+text = "CONTROLS:
+
+WASD to Move
+Hold LShift to Run
+
+Space to Jump
+
+Q to Attack"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 512.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwv8b")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.006
+anchor_bottom = 0.011
+offset_left = 392.0
+offset_top = 136.0
+offset_right = 500.16
+offset_bottom = 244.04
+theme_override_fonts/font = ExtResource("1_44oou")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/hover = SubResource("StyleBoxFlat_44oou")
+text = "Play"
+script = ExtResource("2_qwv8b")
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]

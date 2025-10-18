@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ef2vkj2ghmyu"]
+
+[ext_resource type="Texture2D" uid="uid://bajrqansd3rl8" path="res://Player/PlayerSprites/bullet.png" id="1_kxw81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqmay"]
+atlas = ExtResource("1_kxw81")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7yj7"]
+atlas = ExtResource("1_kxw81")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggrph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqmay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7yj7")
+}],
+"loop": true,
+"name": &"shot",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ggrph")
+animation = &"shot"
+frame = 1
+frame_progress = 0.646734
